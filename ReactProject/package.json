@@ -1,0 +1,21 @@
+{
+  "name": "react-project",
+  "version": "0.0.1",
+  "description": "Shian's react project",
+  "main": "app.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build"
+  },
+  "author": "Wu Tsong-Hsien",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.17.2",
+    "webpack-dev-server": "^3.1.7"
+  }
+}

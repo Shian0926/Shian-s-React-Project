@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 module.exports = {
   entry: [
-    './src/main.jsx'
+    './src/main.js'
   ],
   output: {
     path: path.resolve(__dirname, 'build', 'public'),

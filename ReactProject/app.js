@@ -13,7 +13,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 // 不管你打什麼都會載入 index.html 啦
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname,'src', 'index.html'));
+  res.sendFile(path.join(__dirname,'src', 'view.html'));
 });
 // 監聽 3000 port，並顯示錯誤或成功
 app.listen(3000, function(err) {

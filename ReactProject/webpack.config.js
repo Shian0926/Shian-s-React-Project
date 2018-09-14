@@ -11,7 +11,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    extensions: ['.js', '.jsx', 'css', '.scss']
+    extensions: ['.js', '.jsx', '.css', '.scss']
   },
   module: {
     rules: [
@@ -24,7 +24,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          'style-loader',
+          'css-loader'
+        ],
       },
       {
         test: /\.scss$/,
@@ -35,7 +38,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|woff(2)?|eot|ttf|svg)(\?[a-z0-9=.]+)?$/i,
         use: [
           {
             loader: 'url-loader',

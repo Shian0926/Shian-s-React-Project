@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 // reducers可以一次匯入用解構的組合
 import * as reducers from './reducers'
 
@@ -10,6 +12,7 @@ import * as reducers from './reducers'
 // import { fetchItems, addItem, updateItem } from './middlewares'
 
 import Demo from './Components/Demo'
+import Navbar from './Components/Navbar'
 
 // @reducer
 //
@@ -29,7 +32,10 @@ const store = createStore(reducer)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Demo />
+    <div>
+      <Navbar />
+      <Demo />
+    </div>
   </Provider>,
   document.getElementById('root')
 )

@@ -9,6 +9,7 @@ var compiler = webpack(config);
 // 將 webpack 傳入 webpack-dev-middleware 並套用至 app，同時傳入屬性，webpack 就可以被加載進來
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
+  logLevel: 'silent',
   publicPath: config.output.publicPath
 }));
 // 不管你打什麼都會載入 index.html 啦

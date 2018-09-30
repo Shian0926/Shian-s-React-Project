@@ -2,8 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '../public/scss/bootstrap-custom.scss'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 // reducers可以一次匯入用解構的組合
 import * as reducers from './reducers'
@@ -12,7 +15,9 @@ import * as reducers from './reducers'
 // import { fetchItems, addItem, updateItem } from './middlewares'
 
 import Demo from './Components/Demo'
+import Home from './Components/Home'
 import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
 
 // @reducer
 //
@@ -32,10 +37,16 @@ const store = createStore(reducer)
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>
-      <Navbar />
-      <Demo />
-    </div>
+    <Router>
+      <div className='main bg-gray'>
+        <Navbar />
+        <div className='main-content container'>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/orders" component={Demo} />
+        </div>
+        <Footer />
+      </div>
+    </Router>
   </Provider>,
   document.getElementById('root')
 )

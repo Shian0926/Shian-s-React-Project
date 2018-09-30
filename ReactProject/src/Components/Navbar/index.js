@@ -3,7 +3,18 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { LinkContainer } from "react-router-bootstrap";
 // import { increaseCounter, decreaseCounter } from '../../actions/actionDemo'
+
+const Link = (props) => {
+  return (
+    <LinkContainer to={props.to}>
+      <NavItem eventKey={props.eventKey}>
+        {props.children}
+      </NavItem>
+    </LinkContainer>
+  )
+}
 
 class _Navbar extends React.Component {
 
@@ -22,9 +33,8 @@ class _Navbar extends React.Component {
     ) : (
         <Navbar.Text>Guest</Navbar.Text>
       );
-
     return (
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse collapseOnSelect fixedTop>
         <Navbar.Header>
           <Navbar.Brand>
             Shian's React Project
@@ -33,18 +43,12 @@ class _Navbar extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav
-            activeKey={this.props.eventKey}
+            activeKey={'ORDERS'}
             onSelect={key => this.handleSelect(key)}
           >
-            <NavItem eventKey='HOME'>
-              HOME
-            </NavItem>
-            <NavItem eventKey='ORDERS'>
-              ORDERS
-            </NavItem>
-            <NavItem eventKey='PRODUCT'>
-              PRODUCT
-            </NavItem>
+            <Link to='/' eventKey='HOME'>HOME</Link>
+            <Link to='/orders' eventKey='ORDERS'>ORDERS</Link>
+            <Link to='/product' eventKey='PRODUCT'>PRODUCT</Link>
           </Nav>
           <Nav
             pullRight

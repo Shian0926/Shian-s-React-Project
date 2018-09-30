@@ -1,2 +1,3 @@
-ReactProject/node_modules
-ReactProject/build
+npm-debug.log
+node_modules
+build
